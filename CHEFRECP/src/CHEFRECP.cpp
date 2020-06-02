@@ -1,57 +1,50 @@
 #include <iostream>
 #include <map>
-#include <string>
 #include <vector>
 
 
 int main(void) {
-	std::string temp;
 	int T, N;
-	std::getline(std::cin, temp);
+	std::cin >> T;
 
-	T = std::atoi(temp.c_str());
+	std::map<int, int> map;
 
-	std::map<char, int> map;
-	std::map<char, int>::iterator it;
-
-	std::string in;
+	int in;
 
 	char prev;
 
 	std::vector<int> l;
 
-	std::vector<int> lenght;
-	std::vector<std::string> input;
+	std::vector<int> input;
 
-	for (int i = 0; i < T; i++) {
-		std::getline(std::cin, temp);
+	for (int out = 0; out < T; out++) {
+		std::cin >> N;
 
-		lenght.push_back(std::atoi(temp.c_str()) * 2);
+		map.clear(); // clear stuff
+		l.clear();
+		input.clear();
 
-		std::getline(std::cin, in);
-		input.push_back(in);
-	}
-
-	for (int j = 0; j < T; j++) {
-		N = lenght.at(j);
-		in = input.at(j);
-
-		for (int i = 0; i < N; i += 2) {
-			for (int m = 0; m < i; m += 2) {
-				if (in.at(i) == in.at(m) && in.at(i) != in.at(i - 2 >= 0 ? i - 2 : 0)) {
-					std::cout << "NO" << std::endl;
-					goto safe;
-				}
-			}
-
-			it = map.find(in.at(i));
-			if (it != map.end())
-				map.at(in.at(i))++;
-			else
-				map.insert(std::pair<char, int>(in.at(i), 1));
+		for (int i = 0; i < N; i++) { // get numbers
+			std::cin >> in;
+			input.push_back(in);
 		}
 
-		for (auto const& x : map) {
+		for (int i = 0; i < N; i++) { // check if number occured before with different inbetween
+			for (int m = 0; m < i; m++) {
+				if (input.at(i) == input.at(m)) {
+					if (input.at(i) != input.at(i - 1 >= 0 ? i - 1 : 0)) {
+						std::cout << "NO" << std::endl;
+						goto safe;
+					}
+				}
+			}
+			if (std::map<int, int>::iterator(map.find(input.at(i))) != map.end()) // put amound of number occurences in map
+				map.at(input.at(i))++;
+			else
+				map.insert(std::pair<int, int>(input.at(i), 1));
+		}
+
+		for (auto const& x : map) { // check map for same amount of occurence
 			l.push_back(x.second);
 			for (int n = 0; n < l.size() - 1; n++) {
 				if (l.at(n) == x.second) {
