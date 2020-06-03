@@ -29,6 +29,8 @@ int main(void) {
 			input.push_back(in);
 		}
 
+		// should be able to combine these but im not and i dont understand, too bad
+
 		for (int i = 0; i < N; i++) { // check if number occured before with different inbetween
 			for (int m = 0; m < i; m++) {
 				if (input.at(i) == input.at(m)) {
