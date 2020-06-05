@@ -1,18 +1,19 @@
 #define _CRT_SECURE_NO_WARNINGS
 
+#include "./../Mothership.h"
+
 #include <iostream>
 #include <string>
 
 
-int main(void) {
-	int T, N;
+void flow004() {
+	int T;
 	std::string in;
+
 	scanf("%d", &T);
+
 	while (T--) {
-		N = 0;
 		std::cin >> in;
-		for (int i = 0; i < in.length(); i++)
-			N += in.at(i) - '0';
-		printf("%d\n", N);
+		printf("%d\n", ((in.at(0) - '0') + (in.at(in.length() - 1) - '0')));
 	}
 }

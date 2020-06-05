@@ -1,8 +1,10 @@
-﻿#include <iostream>
+﻿#include "./../Mothership.h"
+
+#include <iostream>
 #include <math.h>
 
 
-int main(void) {
+void bitobyt() {
 	int T, N;
 	long long a;
 	std::cin >> T;
@@ -22,6 +24,4 @@ int main(void) {
 			std::cout << "0 0 " << a << std::endl;
 		}
 	}
-
-	return 0;
 }

@@ -1,8 +1,10 @@
+#include "./../Mothership.h"
+
 #include <iostream>
 #include <string>
 
 
-int main(void) {
+void atm() {
 	std::string in;
 	std::getline(std::cin, in);
 
@@ -15,5 +17,4 @@ int main(void) {
 		if (X + .5f > Y) printf("%.2f", (Y));
 		else printf("%.2f", (Y - (X + .5f)));
 	}
-	return 0;
 }

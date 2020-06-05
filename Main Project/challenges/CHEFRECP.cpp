@@ -1,9 +1,11 @@
+#include "./../Mothership.h"
+
 #include <iostream>
 #include <map>
 #include <vector>
 
 
-int main(void) {
+void chefrecp() {
 	int T, N;
 	std::cin >> T;
 
@@ -60,6 +62,4 @@ int main(void) {
 	safe:
 		continue;
 	}
-
-	return 0;
 }

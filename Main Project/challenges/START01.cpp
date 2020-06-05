@@ -1,9 +1,10 @@
+#include "./../Mothership.h"
+
 #include <iostream>
 
 
-int main(void) {
+void start01() {
 	int i;
 	scanf("%d", &i);
 	printf("%d", i);
-	return 0;
 }

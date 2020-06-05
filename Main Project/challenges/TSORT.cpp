@@ -1,9 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 
+#include "./../Mothership.h"
+
 #include <iostream>
 
 
-int main(void) {
+void tsort() {
 	int T, N, temp;
 	scanf("%d", &T);
 	temp = T;
@@ -14,5 +16,4 @@ int main(void) {
 	}
 	for (int i = 0; i < temp; i++)
 		printf("%d\n", arr[i]);
-	return 0;
 }

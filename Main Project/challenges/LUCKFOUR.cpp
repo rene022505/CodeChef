@@ -1,8 +1,10 @@
+#include "./../Mothership.h"
+
 #include <iostream>
 #include <string>
 
 
-int main(void) {
+void luckfour() {
 	int T, a;
 	std::string in;
 
@@ -16,6 +18,4 @@ int main(void) {
 				a++;
 		printf("%d\n", a);
 	}
-
-	return 0;
 }
